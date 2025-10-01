@@ -1,27 +1,31 @@
-// Sample book data
-const books = [
-    { id: 1, title: "The Great Gatsby", author: "F. Scott Fitzgerald", description: "A classic novel set in the Roaring Twenties." },
-    { id: 2, title: "To Kill a Mockingbird", author: "Harper Lee", description: "A story of racial injustice in the Deep South." },
-    { id: 3, title: "1984", author: "George Orwell", description: "A dystopian novel about totalitarianism." },
-    { id: 4, title: "Pride and Prejudice", author: "Jane Austen", description: "A romantic novel about manners and marriage." },
-    { id: 5, title: "Moby-Dick", author: "Herman Melville", description: "A whaling adventure and quest for vengeance." }
-];
+
+let books = [];
 
 const bookList = document.getElementById('book-list');
 const bookDetails = document.getElementById('book-details');
 const searchInput = document.getElementById('searchInput');
 
-function renderBooks(filter = "") {
+async function fetchBooks(filter = "") {
+    let url = 'http://localhost:3001/api/books';
+    if (filter) {
+        url += `?q=${encodeURIComponent(filter)}`;
+    }
+    try {
+        const res = await fetch(url);
+        books = await res.json();
+        renderBooks();
+    } catch (err) {
+        bookList.innerHTML = '<p style="color:red">Failed to load books.</p>';
+    }
+}
+
+function renderBooks() {
     bookList.innerHTML = '';
-    const filteredBooks = books.filter(book =>
-        book.title.toLowerCase().includes(filter.toLowerCase()) ||
-        book.author.toLowerCase().includes(filter.toLowerCase())
-    );
-    if (filteredBooks.length === 0) {
+    if (books.length === 0) {
         bookList.innerHTML = '<p>No books found.</p>';
         return;
     }
-    filteredBooks.forEach(book => {
+    books.forEach(book => {
         const card = document.createElement('div');
         card.className = 'book-card';
         card.innerHTML = `<h3>${book.title}</h3><p>by ${book.author}</p>`;
@@ -46,9 +50,9 @@ function hideBookDetails() {
 }
 
 searchInput.addEventListener('input', (e) => {
-    renderBooks(e.target.value);
+    fetchBooks(e.target.value);
     hideBookDetails();
 });
 
 // Initial render
-renderBooks();
+fetchBooks();
