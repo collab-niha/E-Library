@@ -1,5 +1,7 @@
 
-let books = [];
+let books = [
+    { id: 1, title: "Pride and Prejudice", author: "Jane Austen", description: "A romantic novel about manners, marriage, and social standing in 19th-century England." }
+];
 
 const bookList = document.getElementById('book-list');
 const bookDetails = document.getElementById('book-details');
