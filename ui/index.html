@@ -12,6 +12,15 @@
         <input type="text" id="searchInput" placeholder="Search books...">
     </header>
     <main>
+        <aside>
+            <form id="addBookForm">
+                <h2>Add a Book</h2>
+                <input type="text" id="titleInput" placeholder="Title" required><br>
+                <input type="text" id="authorInput" placeholder="Author" required><br>
+                <textarea id="descInput" placeholder="Description" rows="3"></textarea><br>
+                <button type="submit">Add Book</button>
+            </form>
+        </aside>
         <section id="book-list">
             <!-- Books will be rendered here -->
         </section>
