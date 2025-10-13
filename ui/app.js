@@ -6,7 +6,14 @@ let books = [
     { id: 4, title: "Fundamentals of Thermodynamics", author: "Richard E. Sonntag, Claus Borgnakke", description: "A classic reference for thermodynamics concepts, applications, and problem-solving in engineering." },
     { id: 5, title: "Electrical Engineering: Principles and Applications", author: "Allan R. Hambley", description: "An accessible introduction to the key concepts and applications of electrical engineering." },
     { id: 6, title: "Materials Science and Engineering: An Introduction", author: "William D. Callister Jr.", description: "A widely used textbook for understanding the properties and applications of engineering materials." },
-    { id: 7, title: "Fluid Mechanics", author: "Frank M. White", description: "A comprehensive guide to the principles and applications of fluid mechanics in engineering." }
+    { id: 7, title: "Fluid Mechanics", author: "Frank M. White", description: "A comprehensive guide to the principles and applications of fluid mechanics in engineering." },
+    { id: 8, title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship, focusing on writing clean, maintainable code." },
+    { id: 9, title: "The Art of Computer Programming", author: "Donald E. Knuth", description: "A comprehensive monograph written by Donald Knuth that covers many kinds of programming algorithms and their analysis." },
+    { id: 10, title: "Artificial Intelligence: A Modern Approach", author: "Stuart Russell, Peter Norvig", description: "A leading textbook in AI, covering theory, algorithms, and applications." },
+    { id: 11, title: "Digital Design", author: "M. Morris Mano", description: "A foundational book for digital logic design and computer architecture." },
+    { id: 12, title: "Signals and Systems", author: "Alan V. Oppenheim, Alan S. Willsky", description: "A classic text for understanding signals, systems, and transforms in engineering." },
+    { id: 13, title: "Modern Control Engineering", author: "Ogata Katsuhiko", description: "A comprehensive book on control systems engineering." },
+    { id: 14, title: "Mechanics of Materials", author: "James M. Gere", description: "A widely used text for the study of the mechanics of deformable bodies." }
 ];
     { id: 1, title: "The Great Gatsby", author: "F. Scott Fitzgerald", description: "A classic novel set in the Roaring Twenties, exploring themes of wealth, love, and the American Dream." },
     { id: 2, title: "To Kill a Mockingbird", author: "Harper Lee", description: "A powerful story of racial injustice and childhood innocence in the Deep South." },
